@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1">
+    <title>Асхат Айтуганов | Резюме</title>
+<!--
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+-->
+    <style>
+        * {
+    box-sizing: border-box;
+}
+body {
+    font-family: Roboto;
+    background-color: #626262;
+    text-transform: uppercase;
+    font-style: italic;
+}
+a {
+    color: #303439;
+}
+li {
+    list-style: none;
+}
+img {
+    transition: all .3s;
+}
+.a4 {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.showRightSide {
+    display: none;
+    position: fixed;
+    top: 15%;
+    right: -53px;
+    background-color: #4794cc;
+    color: #fff;
+    padding: 5px 15px;
+    transform: rotate(-90deg);
+    z-index: 999999999;
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 134.333px;
+}
+.showMain {
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: -43px;
+    background-color: #4794cc;
+    color: #fff;
+    padding: 5px 15px;
+    transform: rotate(90deg);
+    z-index: 999999999;
+    cursor: pointer;
+    border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+    width: 114.867px;
+}
+.main {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform .5s;
+}
+.main_title {
+    margin-top: 40px;
+    margin-right: 20px;
+    text-align: right;
+}
+.name_surname {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 900;
+    color: #303439;
+    line-height: 0;
+    letter-spacing: -2px;
+}
+.profession_text {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #4794cc;
+    line-height: 0;
+}
+
+.education_block {
+    position: relative;
+}
+.education_block span {
+    position: absolute;
+    left: 70px;
+    top: 40%;
+    color: white;
+    font-weight: 900;
+}
+.education_icon {
+    position: absolute;
+    top: 35%;
+    left: 20px;
+}
+
+.education_list {
+    padding-top: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+/*
+.education_list::after {
+    content: '';
+    width: 3px;
+    height: 110px;
+    background-color: #303439;
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: 112px;
+}
+*/
+
+.education_list__item {
+    display: -webkit-box;
+    font-size: 16px;
+    font-weight: 900;
+    color: #303439;
+    margin-bottom: 40px;
+    max-width: 450px;
+}
+.education_list__item__text {
+    font-size: 13px;
+    color: #4794cc;
+}
+.education_list__item__text b {
+    font-weight: 900;
+}
+.education_list__item span {
+    margin-right: 30px;
+}
+.education_list__item div::before {
+    content: '';
+    background-color: #303439;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: -20px;
+    margin-right: 8px;
+}
+.education ul .last {
+    margin-bottom: 0;
+}
+.education ul .last span {
+    width: 92px;
+}
+
+.experience_list {
+    padding-left: 20px;
+    position: relative;
+}
+.experience_list__item {
+    display: -webkit-box;
+    font-size: 16px;
+    font-weight: 900;
+    color: #303439;
+    margin-bottom: 40px;
+    max-width: 350px;
+}
+.year_none {
+    width: 76.5334px;
+    display: inline-block;
+}
+.experience_list div {
+    font-size: 16px;
+    font-weight: 900;
+    color: #303439;
+    margin-left: 30px;
+    text-transform: uppercase;
+}
+.experience_list__item div::before {
+    content: '';
+    background-color: #303439;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: -20px;
+    margin-right: 8px;
+}
+.experience_list div span {
+    font-size: 13px;
+    color: #4794cc;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.experience_block {
+    position: relative;
+}
+.experience_block span {
+    position: absolute;
+    left: 70px;
+    top: 40%;
+    color: white;
+    font-weight: 900;
+}
+
+.experience_icon {
+    position: absolute;
+    top: 30%;
+    left: 20px;
+}
+
+.right_side_block {
+    position: absolute;
+    right: -20px;
+    background: linear-gradient(to bottom, #1e232f, #334058);
+    width: 40%;
+    height: 100%;
+    transform: skewX(2deg);
+    z-index: 0;
+    transition: transform .5s;
+}
+.right_side {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    transition: transform .5s;
+}
+.avatar {
+    margin: 20px auto;
+}
+.mini {
+    width: 100%;
+    border: 3px solid white;
+    border-radius: 50%;
+    max-width: 230px;
+    height: 100%;
+    cursor: pointer;
+    min-height: 230px;
+}
+.mini:hover {
+    opacity: .5;
+}
+.ava {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 9999;
+}
+
+.full_avatar {
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    left: 50%;
+    transform: translate(-50%);
+}
+.hide_full_avatar::after,
+.hide_full_avatar::before {
+    content: '';
+    background-color: blue;
+    width: 10px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
+}
+.hide_full_avatar:hover,
+.hide_full_avatar:hover {
+    opacity: 1;
+}
+.hide_full_avatar::after {
+    transform: rotate(45deg);
+}
+.hide_full_avatar::before {
+    transform: rotate(-45deg);
+}
+
+
+.about_me {
+    text-align: right;
+    position: relative;
+    height: 250px;
+}
+.about_me__bg {
+    width: 330px;
+    height: 200px;
+}
+.about_me__title {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+.about_me__text {
+    position: absolute;
+    top: 45px;
+    left: 10px;
+    font-size: 14px;
+    color: white;
+    text-align: left;
+    padding-left: 20px;
+}
+.about_me__text b {
+    color: #303439;
+}
+.hobbies {
+    width: 250px;
+    height: 200px;
+    margin-left: 60px;
+}
+
+.hobbies_title {
+    text-align: center;
+    font-weight: 900;
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.hobbies_inner {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.hobbies_inner div {
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+.hobbies_inner div img {
+    margin-right: 20px;
+}
+
+.know_languages {
+    width: 250px;
+    height: 200px;
+    margin-left: 60px;
+}
+
+.know_languages__levels {
+    padding-left: 30px;
+}
+
+.know_languages__title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+}
+.know_languages__level {
+    color: white;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.know_languages__level::after {
+    content: '';
+    display: block;
+    width: 170px;
+    height: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+.kz_lang::after {
+    background: linear-gradient(to right, #4c79aa 93%, white 20%);
+}
+.ru_lang::after {
+    background: linear-gradient(to right, #4c79aa 55%, white 20%);
+}
+.en_lang::after {
+    background: linear-gradient(to right, #4c79aa 25%, white 20%);
+}
+
+.contact {
+   color: white;
+   width: 250px;
+   height: 200px;
+   margin-left: 60px
+}
+.contact_title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.contact_content div{
+    margin-top: 15px;
+    margin-left: 40px;
+}
+.contact_content div img {
+    margin-right: 10px;
+}
+.contact a {
+    color: white;
+    text-transform: lowercase;
+}
+
+.skills {
+    width: 100%;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+
+.skills_title__block {
+    text-align: center;
+    height: 60px;
+    background-position-x: center;
+    position: relative;
+}
+.skills_title {
+    padding-top: 10px;
+    font-weight: 900;
+    color: white;
+    position: absolute;
+    left: 41%;
+    top: -13px;
+}
+.level_lines {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    font-size: 14px;
+    max-width: 370px;
+    justify-content: space-between;
+    margin: -20px auto 0 auto;
+}
+
+.level_line {
+    text-align: left;
+}
+.level_line p {
+    margin: 15px 0 2px 0;
+}
+
+.level_line::after {
+    content: '';
+    display: block;
+    width: 170px;
+    height: 10px;
+    background-color: #4794cc;
+    border-radius: 5px;
+}
+
+.level_line-1::after {
+    background: linear-gradient(to right, #303439 83%, #4794cc 1%);
+}
+.level_line-2::after {
+    background: linear-gradient(to right, #303439 40%, #4794cc 1%);
+}
+.level_line-3::after {
+    background: linear-gradient(to right, #303439 30%, #4794cc 1%);
+}
+.level_line-4::after {
+    background: linear-gradient(to right, #303439 15%, #4794cc 1%);
+}
+.level_line-5::after {
+    background: linear-gradient(to right, #303439 22%, #4794cc 20%);
+}
+.level_line-6::after {
+    background: linear-gradient(to right, #303439 30%, #4794cc 20%);
+}
+@media (max-width: 800px) {
+    .main {
+        justify-content: flex-start;
+    }
+    .a4 {
+        position: absolute;
+        max-width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width: 720px) {
+    .main {
+        width: 55%;
+        justify-content: flex-start;
+    }
+    .education {
+        width: 245px;
+    }
+    .experience {
+        width: 300px;
+    }
+    .about_me__bg {
+        width: 300px;
+    }
+    .mini {
+        max-width: 180px;
+        min-height: 180px;
+        margin-left: 70px;
+    }
+}
+@media (max-width: 640px) {
+    .main {
+        width: 50%;
+        justify-content: flex-start;
+    }
+    .education {
+        width: 240px;
+    }
+    .right_side_block {
+        width: 45%;
+    }
+    .experience {
+        width: 280px;
+    }
+    .level_lines {
+        justify-content: center;
+    }
+    #setImg {
+        max-width: 500px;
+    }
+}
+@media (max-width: 606px) {
+    .education {
+        width: 190px;
+    }
+    .right_side_block {
+        width: 40%;
+    }
+    .about_me__bg {
+        width: 270px;
+        height: 180px;
+    }
+    .about_me__text {
+        font-size: 12px;
+        left: 37px;
+    }
+
+}
+@media (max-width: 600px) {
+    .a4 {
+        min-height: 1000px;
+    }
+    .main {
+        width: 100%;
+    }
+    .main_title {
+        margin-right: 60px;
+    }
+    .showRightSide {
+        display: block;
+    }f
+    .education {
+        width: 100%;
+    }
+    .experience {
+        width: 100%;
+    }
+    .level_lines {
+        justify-content: space-between;
+    }
+    .right_side_block {
+        transform: translateX(100%);
+        width: 95%;
+    }
+    .right_side {
+        transform: translateX(100%);
+        width: 100%;
+    }
+    .hobbies {
+        margin: 0 auto;
+    }
+    .know_languages {
+        margin: 0 auto;
+    }
+    .contact {
+        margin: 0 auto;
+    }
+    .about_me__bg {
+        width: 100%;
+    }
+    #setImg {
+        max-width: 435px;
+    }
+}
+@media (max-width: 435px) {
+    .a4 {
+        min-height: 1400px;
+    }
+    .experience {
+        max-width: 325px;
+    }
+    .level_lines {
+        justify-content: space-around;
+    }
+    #setImg {
+        max-width: 400px;
+    }
+}
+@media (max-width: 400px) {
+
+    .experience {
+        max-width: 235px;
+    }
+    .education {
+        max-width: 230px;
+    }
+    #setImg {
+        max-width: 300px;
+    }
+}
+
+    </style>
+    <link rel="shortcut icon" href="https://i.ibb.co/JRSQW1K/shortcut.png" type="image/png">
+</head>
+<body>
+    <div class="full_avatar">
+        <img id="setImg" alt="">
+        <div class="hide_full_avatar"></div>
+    </div>
+    <div class="a4">
+        <div style="position: absolute; left: 10px; top: 10px; z-index: 99999;">
+            <a onclick="kzTranslate()" id="kz" href="#kz"><img src="https://i.ibb.co/2t2Xgk4/Kazakhstan.png" alt="KZ" width="30px"></a>
+            <a onclick="ruTranslate()" id="ru" href="#ru"><img src="https://i.ibb.co/4ph6R6G/Russia.pngg" alt="RU" width="30px"></a>
+        </div>
+        <div class="showRightSide">
+            О себе
+        </div>
+        <div class="showMain">
+            Главная
+        </div>
+        <div class="main">
+
+            <header class="main_title">
+                <h3 class="name_surname">Асхат Айтуганов</h3>
+                <p class="profession_text">сфера IT</p>
+            </header>
+            <section class="education">
+               <div class="education_block">
+                   <img src="https://i.ibb.co/FB0DrJ1/experience.png" alt="" width="270px" height="60px">
+                   <img src="https://i.ibb.co/YWQttss/edu.png" alt="" width="35px" class="education_icon">
+                   <span id="education">образование</span>
+               </div>
+                <div class="education_list">
+                    <div class="education_list__item">
+                        <span>2001-2010</span>
+                        <div>
+                            <a href="https://edu-kz.com/shkoly/shkola-sad-no43-v-aktobe/" target="_blank" id="school43">СРЕДНЯЯ ШКОЛА №43</a>
+                        </div>
+                    </div>
+                    <div class="education_list__item">
+                        <span>2010-2012</span>
+                        <div>
+                            <a target="_blank" href="https://2gis.kz/aktobe/firm/70000001031743523?m=57.197019%2C50.281037%2F18.87" id="school37">СРЕДНЯЯ ШКОЛА №37</a>
+                        </div>
+                    </div>
+                    <div class="education_list__item last">
+                        <span>2012-2016</span>
+                        <div>
+                            <a target="_blank" href="http://krmu.kz/" id="univercity">КАЗАХСКО-РУССКИЙ<br>МЕЖДУНАРОДНЫЙ УНИВЕРСИТЕТ<br></a>
+                            <span class="education_list__item__text" id="specialty"><b>БАКАЛАВР</b> ТЕХНИКИ И ТЕХНОЛОГИИ<br>
+                            <b>СПЕЦИАЛЬНОСТЬ</b> АВТОМАТИЗАЦИЯ И<br>УПРАВЛЕНИЕ</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="experience">
+                <div class="experience_block">
+                    <img src="https://i.ibb.co/FB0DrJ1/experience.png" alt="" width="270px" height="60px">
+                    <img src="https://i.ibb.co/f2zXbQm/canvas.png" alt="" width="35px" class="experience_icon">
+                    <span id="experience">опыт работы</span>
+                </div>
+                <ul class="experience_list">
+                    <li class="experience_list__item"><span class="year_none">2014</span>
+                        <div>
+                            <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D1%82%D1%8E%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B7%D0%B0%D0%B2%D0%BE%D0%B4_%D1%85%D1%80%D0%BE%D0%BC%D0%BE%D0%B2%D1%8B%D1%85_%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9" target="_blank" id="job1">АО Актюбинский завод хромовых соединений<br></a>
+                            <span id="job1Text">
+                                <b>учебная практика</b><br>
+                                наблюдение измеряемой величины на отчетном
+                                устройстве контрольно измерительных приборов
+                                (шкале с цифровым указателем, пере с диаграммой)
+                            </span>
+                        </div>
+                    </li>
+                    <li class="experience_list__item">2014-2015
+                        <div>
+                            <a href="https://1stroitelny.kz/profile/show/id/540ec40b426afb907f8b45b7.html" target="_blank" id="job2">Телекомпания нур</a><br>
+                            <span id="job2Text">
+                                <b>видео-инженер</b><br>
+                                нарезка, монтаж, дизайн видеоданных разной сложности
+                                <b>работа в программах:</b> edius 7.0, adobe premiere pro, photoshop
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="skills">
+                <div class="skills_title__block">
+                    <img src="https://i.ibb.co/NYFwhBd/skills.png" alt="" width="125px" height="50px">
+                    <p class="skills_title">Навыки</p>
+                </div>
+                <div class="level_lines">
+                    <div class="level_line level_line-1">
+                        <p>adobe photoshop</p>
+                    </div>
+                    <div class="level_line level_line-2">
+                        <p>adobe after effects</p>
+                    </div>
+                    <div class="level_line level_line-3">
+                        <p>html/css</p>
+                    </div>
+                    <div class="level_line level_line-4">
+                        <p>php</p>
+                    </div>
+                    <div class="level_line level_line-5">
+                        <p>sql</p>
+                    </div>
+                    <div class="level_line level_line-6">
+                        <p>javascript</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="right_side_block"></div>
+        <aside class="right_side">
+            <div class="avatar">
+                <img src="images/photo.jpg" alt="" class="mini">
+            </div>
+
+            <div class="about_me">
+                <img class="about_me__bg" src="https://i.ibb.co/Fq9hmDR/block.png" alt="">
+                <div class="about_me__title">О себе</div>
+                <div class="about_me__text">
+                    <b><i>ДАТА РОЖДЕНИЯ:</i></b> 14 МАЯ 1995<br>
+                    <b><i>СЕМЕЙНОЕ ПОЛОЖЕНИЕ:</i></b> НЕ ЖЕНАТ<br>
+                    <b><i>ЦЕЛЬ:</i></b> УСТРОИТСЯ НА РАБОТУ В СФЕРЕ IT, с возможностью карьерного роста<br>
+                    <b><i>ЛИЧНЫЕ КАЧЕСТВА:</i></b> ОТВЕТСТВЕННОСТЬ,
+                    АККУРАТНОСТЬ, ЧЕСТНОСТЬ, БЫСТОЕ
+                    ОСВОЕНИЕ НОВЫХ ЗНАНИЙ И НАВЫКОВ
+                </div>
+            </div>
+            <div class="hobbies">
+                <div class="hobbies_title">хобби</div>
+                <div class="hobbies_inner">
+                    <div><img src="https://i.ibb.co/m6ndzTm/paint.png" width="30px" alt=""><span class="draw">рисование</span></div>
+                    <div><img src="https://i.ibb.co/6sFbqvt/book.png" width="30px" alt=""><span class="reading">чтение</span></div>
+                    <div class="billiard"><img src="https://i.ibb.co/mNDH2QQ/billiard-icon.png" width="30px" alt="">бильярд</div>
+                </div>
+            </div>
+            <div class="know_languages">
+                <div class="know_languages__title">знание языков</div>
+                <div class="know_languages__levels">
+                    <div class="know_languages__level kz_lang">қазақша</div>
+                    <div class="know_languages__level ru_lang">русский</div>
+                    <div class="know_languages__level en_lang">english</div>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="contact_title">контакты</div>
+                <div class="contact_content">
+                    <div class="contact_place">
+                    <img src="https://i.ibb.co/kJhBNtR/loc.png" alt="" width="10px">
+                    <span class="city">Актобе</span>
+                    </div>
+                    <div class="contact_phone">
+                        <img src="https://i.ibb.co/wY607FW/phone.png" alt="" width="20px">
+                        <a href="tel:87029976126">+7 (702) 997 61 26</a>
+                    </div>
+                    <div class="contact_email">
+                       <img src="https://i.ibb.co/xLD9HRV/email.png" width="15px" alt="">
+                        <a href="mailto:a.a.aituganov@list.ru">a.a.aituganov@list.ru</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        let ava = document.querySelector('.mini');
+        ava.addEventListener('click', () => {
+            let getImg = ava.getAttribute('src');
+            document.getElementById('setImg').setAttribute('src', getImg);
+            document.querySelector('.full_avatar').style.display = 'block';
+            document.querySelector('.a4').style.webkitFilter = 'blur(5px)';
+        })
+
+        function hideFullImage() {
+            document.querySelector('.full_avatar').style.display = 'none';
+            document.querySelector('.a4').style.webkitFilter = null;
+        }
+        document.querySelector('.hide_full_avatar').onclick = hideFullImage;
+        document.onkeydown = (e) => {
+            if (e.code == 'Escape') {
+                hideFullImage();
+            }
+        }
+
+        let showRightSide = document.querySelector('.showRightSide');
+        showRightSide.onclick = () => {
+            document.querySelector('.main').style.transform = 'translateX(-100%)';
+            document.querySelector('.right_side').style.transform = 'translateX(0)';
+            document.querySelector('.right_side_block').style.transform = 'skewX(2deg)';
+            showRightSide.style.display = 'none';
+            function showMainFunction() {
+                showMain.style.display = 'block';
+            }
+            setTimeout(showMainFunction, 200);
+        }
+        let showMain = document.querySelector('.showMain');
+        showMain.onclick = () => {
+            document.querySelector('.main').style.transform = 'translateX(0)';
+            document.querySelector('.right_side').style.transform = 'translateX(100%)';
+            document.querySelector('.right_side_block').style.transform = 'translateX(100%)';
+            showMain.style.display = 'none';
+            function showMainFunction() {
+                showRightSide.style.display = 'block';
+            }
+            setTimeout(showMainFunction, 200);
+        }
+
+
+        let kazLang = document.getElementById('kz'),
+            rusLang = document.getElementById('ru');
+
+let language = {
+            ru: {
+                nameSurname: 'Асхат Айтуганов',
+                spec: 'сфера IT',
+                school43: 'Средняя школа №43',
+                school37: 'Средняя школа №37',
+                univercity: 'КАЗАХСКО-РУССКИЙ<br>МЕЖДУНАРОДНЫЙ УНИВЕРСИТЕТ<br>',
+                specialty: "<b>БАКАЛАВР</b> ТЕХНИКИ И ТЕХНОЛОГИИ<br><b>СПЕЦИАЛЬНОСТЬ</b> АВТОМАТИЗАЦИЯ И<br>УПРАВЛЕНИЕ",
+                job1: 'АО Актюбинский завод хромовых соединений<br>',
+                job1Text: '<b>учебная практика</b><br>наблюдение измеряемой величины на отчетном устройстве контрольно измерительных приборов (шкале с цифровым указателем, пере с диаграммой)',
+                job2: 'Телекомпания нур',
+                job2Text: '<b>видео-инженер</b><br>нарезка, монтаж, дизайн видеоданных разной сложности <b>работа в программах:</b> edius 7.0, adobe premiere pro, photoshop',
+                skills: 'навыки',
+                aboutMe: 'о себе',
+                aboutMeText: '<b><i>ДАТА РОЖДЕНИЯ:</i></b> 14 МАЯ 1995<br><b><i>СЕМЕЙНОЕ ПОЛОЖЕНИЕ:</i></b> НЕ ЖЕНАТ<br><b><i>ЦЕЛЬ:</i></b> УСТРОИТСЯ НА РАБОТУ В СФЕРЕ IT, с возможностью карьерного роста<br><b><i>ЛИЧНЫЕ КАЧЕСТВА:</i></b> ОТВЕТСТВЕННОСТЬ, АККУРАТНОСТЬ, ЧЕСТНОСТЬ, БЫСТОЕ ОСВОЕНИЕ НОВЫХ ЗНАНИЙ И НАВЫКОВ',
+                drawing: 'рисование',
+                reading: 'чтение',
+                knowLanguages: 'знание языков',
+                contact: 'контакты',
+                city: 'Актобе',
+                education: 'образование',
+                experience: 'опыт работы',
+                mainTitle: 'Асхат Айтуганов || Резюме',
+                showAboutMe: 'о себе',
+                goMain: 'главная'
+            },
+            kz: {
+                nameSurname: 'Айтуғанов Асхат',
+                spec: 'IT сферасы',
+                school43: '№43 орта мектебі',
+                school37: '№37 орта мектебі',
+                univercity: 'қазақ-орыс халықаралық<br>универститеті<br>',
+                specialty: "<b>БАКАЛАВРИАТ</b> ТЕХНИКА ЖӘНЕ ТЕХНОЛОГИЯ<br><b>мамандық</b> АВТОМАТтандыру және<br>басқару",
+                job1: 'АҚ Ақтөбе хром қосындылары зауыты<br>',
+                job1Text: '<b>жаттығу практикасы</b><br>бақылау-өлшеу аспаптарының есептік құрылғысында өлшенетін шаманы бақылау (сандық көрсеткіші бар шкала)',
+                job2: 'нұр телекомпаниясы',
+                job2Text: '<b>бейне-инженер</b><br>әр түрлі қиындықтағы бейнематериалдарды қию, монтаждау, дизайнын келтіру <b><br>жұмыс істеген программалар:</b> edius 7.0, adobe premiere pro, photoshop',
+                skills: 'дағдылар',
+                aboutMe: 'өзім туралы',
+                aboutMeText: '<b><i>туылған күн:</i></b> 14 мамыр 1995<br><b><i>отбасылық жағдай:</i></b> үйленбеген<br><b><i>мақсат:</i></b>мансаптық мүмкіндіктерімен, IT облысында жұмысқа кіру<br><b><i>жеке қасиеттер:</i></b> жауапкершілік, ұқыптылық, адалдық, ЖАҢА БІЛІМ ЖӘНЕ БІЛІКТІЛІКТІ тез арада дамыту',
+                drawing: 'сурет салу',
+                reading: 'оқу',
+                knowLanguages: 'білетін тілдер',
+                contact: 'байланыс мәліметтері',
+                city: 'Ақтөбе',
+                education: 'білім',
+                experience: 'жұмыс тәжірибесі',
+                mainTitle: 'Айтуғанов Асхат || Резюме',
+                showAboutMe: 'өзім туралы',
+                goMain: 'басты бет'
+            }
+        };
+
+function kzTranslate() {
+    document.querySelector('.name_surname').textContent = language.kz.nameSurname;
+    document.getElementById('school43').textContent = language.kz.school43;
+    document.getElementById('school37').textContent = language.kz.school37;
+    document.getElementById('univercity').innerHTML = language.kz.univercity;
+    document.getElementById('specialty').innerHTML = language.kz.specialty;
+    document.getElementById('job1').innerHTML = language.kz.job1;
+    document.getElementById('job1Text').innerHTML = language.kz.job1Text;
+    document.querySelector('.skills_title').innerHTML = language.kz.skills;
+    document.getElementById('job2').innerHTML = language.kz.job2;
+    document.getElementById('job2Text').innerHTML = language.kz.job2Text;
+    document.querySelector('.about_me__title').innerHTML = language.kz.aboutMe;
+    document.querySelector('.about_me__text').innerHTML = language.kz.aboutMeText;
+    document.querySelector('.draw').innerHTML = language.kz.drawing;
+    document.querySelector('.reading').innerHTML = language.kz.reading;
+    document.querySelector('.know_languages__title').innerHTML = language.kz.knowLanguages;
+    document.querySelector('.contact_title').innerHTML = language.kz.contact;
+    document.querySelector('.city').innerHTML = language.kz.city;
+    document.getElementById('education').innerHTML = language.kz.education;
+    document.getElementById('experience').innerHTML = language.kz.experience;
+    document.title = language.kz.mainTitle;
+    document.querySelector('.showRightSide').innerHTML = language.kz.showAboutMe;
+    document.querySelector('.showMain').innerHTML = language.kz.goMain;
+    document.querySelector('.profession_text').innerHTML = language.kz.spec;
+}
+function ruTranslate() {
+    document.querySelector('.name_surname').textContent = language.ru.nameSurname;
+    document.getElementById('school43').textContent = language.ru.school43;
+    document.getElementById('school37').textContent = language.ru.school37;
+    document.getElementById('univercity').innerHTML = language.ru.univercity;
+    document.getElementById('specialty').innerHTML = language.ru.specialty;
+    document.getElementById('job1').innerHTML = language.ru.job1;
+    document.getElementById('job1Text').innerHTML = language.ru.job1Text;
+    document.querySelector('.skills_title').innerHTML = language.ru.skills;
+    document.getElementById('job2').innerHTML = language.ru.job2;
+    document.getElementById('job2Text').innerHTML = language.ru.job2Text;
+    document.querySelector('.about_me__title').innerHTML = language.ru.aboutMe;
+    document.querySelector('.about_me__text').innerHTML = language.ru.aboutMeText;
+    document.querySelector('.draw').innerHTML = language.ru.drawing;
+    document.querySelector('.reading').innerHTML = language.ru.reading;
+    document.querySelector('.know_languages__title').innerHTML = language.ru.knowLanguages;
+    document.querySelector('.contact_title').innerHTML = language.ru.contact;
+    document.querySelector('.city').innerHTML = language.ru.city;
+    document.getElementById('education').innerHTML = language.ru.education;
+    document.getElementById('experience').innerHTML = language.ru.experience;
+    document.title = language.ru.mainTitle;
+    document.querySelector('.showRightSide').innerHTML = language.ru.showAboutMe;
+    document.querySelector('.showMain').innerHTML = language.ru.goMain;
+    document.querySelector('.profession_text').innerHTML = language.ru.spec;
+}
+
+
+        if (window.location.hash) {
+            if (window.location.hash === '#kz') {
+                kzTranslate();
+            }
+            if (window.location.hash === '#ru') {
+                ruTranslate();
+            }
+        }
+    </script>
+</body>
+</html>
